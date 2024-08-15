@@ -14,10 +14,10 @@ jobs:
   maven-release:
     runs-on: ubuntu-latest
     steps:
+      - name: setup-docker
+        uses: docker-practice/actions-setup-docker@v1
       - name: Checkout
-        uses: actions/checkout@v3
-      - name: Setup Docker
-        uses: docker/setup-docker@v1       
+        uses: actions/checkout@v3   
       - name: Generate release info
         run: |
           cd scripts
